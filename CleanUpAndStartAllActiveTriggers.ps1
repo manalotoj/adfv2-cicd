@@ -5,7 +5,7 @@ param
     [parameter(Mandatory = $false)] [String] $DataFactoryName="sampleuserdemo2"
 )
 
-Function Clean([String] $armTemplate, [String] $ResourceGroupName, [String] $DataFactoryName) {
+Function Clean([String] $ResourceGroupName, [String] $DataFactoryName, [String] $armTemplate) {
     $templateJson = Get-Content $armTemplate | ConvertFrom-Json
     $resources = $templateJson.resources
 
